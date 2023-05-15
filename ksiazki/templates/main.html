@@ -10,44 +10,15 @@
     <title>Main</title>
 </head>
 <body>
-<div class="button-bar">
-
-    <a href="{% url 'main' %}">
-        <button>
-            Main
-        </button>
-    </a>
-    <a href="{% url 'publishers-list' %}">
-        <button>
-            Publishers
-        </button>
-    </a>
-    <a href="{% url 'category-list' %}">
-        <button>
-            Categories
-        </button>
-    </a>
-    <a href="{% url 'author-list' %}">
-        <button>
-            Authors
-        </button>
-    </a>
-    <a href="{% url 'publishers-add' %}">
-        <button>
-            Add publisher
-        </button>
-    </a>
-    <a href="{% url 'category-add' %}">
-        <button>
-            Add category
-        </button>
-    </a>
-    <a href="{% url 'author-add' %}">
-        <button>
-            Add author
-        </button>
-    </a>
-</div>
+    <ul class="nav">
+        <li class="nav"><a href="{% url 'main' %}">Main</a></li>
+        <li class="nav"><a href="{% url 'publishers-list' %}">Publishers</a></li>
+        <li class="nav"><a href="{% url 'category-list' %}">Categories</a></li>
+        <li class="nav"><a href="{% url 'author-list' %}">Authors</a></li>
+        <li class="nav"><a href="{% url 'publishers-add' %}">Add publisher</a></li>
+        <li class="nav"><a href="{% url 'category-add' %}">Add category</a></li>
+        <li class="nav"><a href="{% url 'author-add' %}">Add author</a></li>
+    </ul>
 {% block content %}{% endblock %}
 <div>
     Publishers: {{ pc }}

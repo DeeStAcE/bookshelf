@@ -4,7 +4,6 @@
     --color-link: #00c7ff; /* Kolor linków */
 }
 
-
 body {
     background-color: var(--color-background);
     color: var(--color-text);
@@ -20,24 +19,6 @@ a {
 
 a:hover {
     color: #23527c; /* Kolor tekstu po najechaniu kursorem */
-}
-
-.button-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-}
-
-.button-bar button {
-    background-color: var(--color-link);
-    margin: 0 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
 }
 
 div {
@@ -67,4 +48,33 @@ input:focus {
     outline: none; /* Usunięcie domyślnego zaznaczenia */
     border-color: var(--color-link); /* Kolor obramowania po kliknięciu */
     box-shadow: 0 0 5px #4CAF50; /* Cień po kliknięciu */
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--color-background);
+}
+
+li.nav {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.nav a:hover:not(.active) {
+    background-color: var(--color-link);
 }
