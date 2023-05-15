@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="name">Publisher: </label>
+            <input type="text" id="name" name="name" value="{{ publisher.name }}">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}

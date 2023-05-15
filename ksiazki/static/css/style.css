@@ -1,0 +1,70 @@
+:root {
+    --color-background: #333; /* Kolor tła */
+    --color-text: #fff; /* Kolor tekstu */
+    --color-link: #00c7ff; /* Kolor linków */
+}
+
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none; /* Brak podkreślenia */
+    transition: color 0.3s ease; /* Płynna animacja zmiany koloru */
+}
+
+a:hover {
+    color: #23527c; /* Kolor tekstu po najechaniu kursorem */
+}
+
+.button-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.button-bar button {
+    background-color: var(--color-link);
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+div {
+    padding: 20px; /* Wewnętrzny margines */
+}
+
+button[type="submit"] {
+    background-color: var(--color-link);
+    color: white; /* Kolor tekstu */
+    padding: 10px 20px; /* Wewnętrzny margines */
+    border: none; /* Brak obramowania */
+    border-radius: 4px; /* Zaokrąglenie rogów */
+    cursor: pointer; /* Kursor wskaźnik */
+    font-size: 16px;
+}
+
+input {
+    background-color: var(--color-background);
+    color: white; /* Kolor tekstu */
+    font-size: 16px;
+    padding: 10px; /* Wewnętrzny margines */
+    border: 1px solid #ccc; /* Obramowanie */
+    border-radius: 4px; /* Zaokrąglenie rogów */
+}
+
+input:focus {
+    outline: none; /* Usunięcie domyślnego zaznaczenia */
+    border-color: var(--color-link); /* Kolor obramowania po kliknięciu */
+    box-shadow: 0 0 5px #4CAF50; /* Cień po kliknięciu */
+}
