@@ -22,5 +22,6 @@ from ksiazki import views as books
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include('ksiazki.urls')),
+    path('books_generics/', include('bookshelf_generic.urls')),
     path('', books.MainView.as_view(), name='main'),
 ]

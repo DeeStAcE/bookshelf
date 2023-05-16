@@ -10,20 +10,32 @@
     <title>Main</title>
 </head>
 <body>
-    <ul class="nav">
-        <li class="nav"><a href="{% url 'main' %}">Main</a></li>
-        <li class="nav"><a href="{% url 'publishers-list' %}">Publishers</a></li>
-        <li class="nav"><a href="{% url 'category-list' %}">Categories</a></li>
-        <li class="nav"><a href="{% url 'author-list' %}">Authors</a></li>
-        <li class="nav"><a href="{% url 'book-list' %}">Books</a></li>
-        <li class="nav"><a href="{% url 'publishers-add' %}">Add publisher</a></li>
-        <li class="nav"><a href="{% url 'category-add' %}">Add category</a></li>
-        <li class="nav"><a href="{% url 'author-add' %}">Add author</a></li>
-        <li class="nav"><a href="{% url 'book-add' %}">Add book</a></li>
-    </ul>
+<ul class="nav">
+    <li class="nav"><a href="{% url 'main' %}">Main</a></li>
+    <li class="nav"><a href="{% url 'publishers-list' %}">Publishers</a></li>
+    <li class="nav"><a href="{% url 'category-list' %}">Categories</a></li>
+    <li class="nav"><a href="{% url 'author-list' %}">Authors</a></li>
+    <li class="nav"><a href="{% url 'book-list' %}">Books</a></li>
+    <li class="nav"><a href="{% url 'publishers-add' %}">Add publisher</a></li>
+    <li class="nav"><a href="{% url 'category-add' %}">Add category</a></li>
+    <li class="nav"><a href="{% url 'author-add' %}">Add author</a></li>
+    <li class="nav"><a href="{% url 'book-add' %}">Add book</a></li>
+</ul>
+
+<ul class="nav">
+    <li class="nav"><a href="{% url 'publisher-generic-list' %}">Publishers G</a></li>
+    <li class="nav"><a href="{% url 'author-generic-list' %}">Authors G</a></li>
+    <li class="nav"><a href="{% url 'book-generic-list' %}">Books G</a></li>
+    <li class="nav"><a href="{% url 'publisher-generic-add' %}">Add publisher G</a></li>
+    <li class="nav"><a href="{% url 'book-generic-add' %}">Add book G</a></li>
+</ul>
+
 {% block content %}{% endblock %}
+
 <div>
     Publishers: {{ pc }}
 </div>
+
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
