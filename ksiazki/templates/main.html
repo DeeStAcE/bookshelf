@@ -11,6 +11,12 @@
 </head>
 <body>
 <ul class="nav">
+    {% if not user.is_authenticated %}
+        <li class="nav"><a href="{% url 'login' %}">Login</a></li>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <li class="nav"><a href="{% url 'logout' %}">Logout</a></li>
+    {% endif %}
     <li class="nav"><a href="{% url 'main' %}">Main</a></li>
     <li class="nav"><a href="{% url 'publishers-list' %}">Publishers</a></li>
     <li class="nav"><a href="{% url 'category-list' %}">Categories</a></li>
@@ -29,6 +35,12 @@
     <li class="nav"><a href="{% url 'publisher-generic-add' %}">Add publisher G</a></li>
     <li class="nav"><a href="{% url 'book-generic-add' %}">Add book G</a></li>
 </ul>
+
+{% if user.is_authenticated %}
+    <div>
+        Witaj {{ user.username }}
+    </div>
+{% endif %}
 
 {% block content %}{% endblock %}
 
