@@ -131,3 +131,33 @@ class AuthorEditView(View):
             author.save()
             return redirect('author-list')
         return render(request, 'add_author.html', {'form': form})
+
+
+class AddBookView(View):
+
+    def get(self, request):
+        form = AddBookForm()
+        return render(request, 'book_add.html', {'form': form})
+
+    def post(self, request):
+        form = AddBookForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # form.save(commit=False) nie zapisuj obiektu do bazy danych
+            return redirect('book-list')
+        return render(request, 'book_add.html', {'form': form})
+
+
+class BookListView(View):
+
+    def get(self, request):
+        return render(request, 'book_list.html',
+                      {'books': Book.objects.order_by('title')})
+
+
+class BookDetailsView(View):
+
+    def get(self, request, id):
+        book = Book.objects.get(pk=id)
+        return render(request, 'book_details.html',
+                      {'book': book})

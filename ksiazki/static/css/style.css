@@ -50,6 +50,15 @@ input:focus {
     box-shadow: 0 0 5px #4CAF50; /* Cień po kliknięciu */
 }
 
+select {
+    background-color: var(--color-background);
+    color: white; /* Kolor tekstu */
+    font-size: 16px;
+    padding: 10px; /* Wewnętrzny margines */
+    border: 1px solid #ccc; /* Obramowanie */
+    border-radius: 4px; /* Zaokrąglenie rogów */
+}
+
 ul.nav {
     list-style-type: none;
     margin: 0;
@@ -75,6 +84,6 @@ li.nav a {
     text-decoration: none;
 }
 
-li.nav a:hover:not(.active) {
+li.nav:hover {
     background-color: var(--color-link);
 }

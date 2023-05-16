@@ -9,7 +9,10 @@ urlpatterns = [
     path('category/', CategoryListView.as_view(), name='category-list'),
     path('category/add/', CategoryAddView.as_view(), name='category-add'),
     path('category/edit/<int:id>/', CategoryEditView.as_view(), name='category-edit'),
-    path('author/add', AuthorAddView.as_view(), name='author-add'),
+    path('author/add/', AuthorAddView.as_view(), name='author-add'),
     path('author/', AuthorListView.as_view(), name='author-list'),
-    path('author/edit/<int:id>', AuthorEditView.as_view(), name='author-edit'),
+    path('author/edit/<int:id>/', AuthorEditView.as_view(), name='author-edit'),
+    path('book/add/', AddBookView.as_view(), name='book-add'),
+    path('book/', BookListView.as_view(), name='book-list'),
+    path('book/<int:id>/', BookDetailsView.as_view(), name='book-details'),
 ]

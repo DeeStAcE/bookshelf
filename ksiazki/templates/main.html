@@ -1,5 +1,5 @@
-<!doctype html>
 {% load static %}
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,9 +15,11 @@
         <li class="nav"><a href="{% url 'publishers-list' %}">Publishers</a></li>
         <li class="nav"><a href="{% url 'category-list' %}">Categories</a></li>
         <li class="nav"><a href="{% url 'author-list' %}">Authors</a></li>
+        <li class="nav"><a href="{% url 'book-list' %}">Books</a></li>
         <li class="nav"><a href="{% url 'publishers-add' %}">Add publisher</a></li>
         <li class="nav"><a href="{% url 'category-add' %}">Add category</a></li>
         <li class="nav"><a href="{% url 'author-add' %}">Add author</a></li>
+        <li class="nav"><a href="{% url 'book-add' %}">Add book</a></li>
     </ul>
 {% block content %}{% endblock %}
 <div>

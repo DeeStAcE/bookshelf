@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div>
+        <div>
+            {{ book.title }}
+        </div>
+        <div>
+            Author: {{ book.author.first_name }} {{ book.author.last_name }} <br>
+            Publisher: {{ book.publisher.name }}, {{ book.year }}
+        </div>
+        <div>
+            Categories:
+            <ul>
+                {% for category in book.categories.all %}
+                    <li>{{ category }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
