@@ -35,6 +35,16 @@ button[type="submit"] {
     font-size: 16px;
 }
 
+button {
+    background-color: var(--color-link);
+    color: white; /* Kolor tekstu */
+    padding: 10px 10px; /* Wewnętrzny margines */
+    border: none; /* Brak obramowania */
+    border-radius: 4px; /* Zaokrąglenie rogów */
+    cursor: pointer; /* Kursor wskaźnik */
+    font-size: 14px;
+}
+
 input {
     background-color: var(--color-background);
     color: white; /* Kolor tekstu */
@@ -64,7 +74,6 @@ ul.nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: var(--color-background);
 }
 
 li.nav {

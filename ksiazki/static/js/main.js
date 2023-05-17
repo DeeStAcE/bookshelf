@@ -1,3 +1,3 @@
-function ChangeColorOfBody() {
-    body = document.querySelector('body')
-}
+body = document.querySelector('body')
+changeThemeButton = document.querySelector('#change-theme')
+

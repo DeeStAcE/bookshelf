@@ -157,7 +157,22 @@ class BookListView(View):
 
 class BookDetailsView(View):
 
-    def get(self, request, id):
-        book = Book.objects.get(pk=id)
+    def get(self, request, pk):
+        book = Book.objects.get(pk=pk)
+        form = AddCommentForm()
         return render(request, 'book_details.html',
-                      {'book': book})
+                      {'book': book,
+                       'form': form})
+
+    def post(self, request, pk):
+        book = Book.objects.get(pk=pk)
+        form = AddCommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.book = book
+            comment.user = request.user
+            comment.save()
+            return redirect('book-details', pk)
+        return render(request, 'book_details.html',
+                      {'book': book,
+                       'form': form})

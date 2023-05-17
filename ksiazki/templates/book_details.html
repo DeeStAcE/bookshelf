@@ -17,4 +17,17 @@
             </ul>
         </div>
     </div>
+    <div>
+        {% include 'basic_form.html' %}
+    </div>
+    <div>
+        Komentarze:
+        <ul>
+            {% for comment in book.comment_set.all %}
+                <div>
+                    <li>{{ comment.date }} -<p>{{ comment.content }}</p>{{ comment.user.username }}</li>
+                </div>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

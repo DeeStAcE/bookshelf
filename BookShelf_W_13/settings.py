@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'ksiazki.context_processors.number_of_publishers'
+                'ksiazki.context_processors.number_of_publishers',
             ],
         },
     },

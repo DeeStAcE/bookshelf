@@ -26,3 +26,9 @@ class AddBookForm(forms.ModelForm):
         widgets = {
             'categories': forms.CheckboxSelectMultiple
         }
+
+
+class AddCommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
