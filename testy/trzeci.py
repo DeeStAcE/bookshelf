@@ -1,5 +1,7 @@
 from datetime import datetime
 
+import pytest
+
 
 def analyze_pesel(pesel):
     weights = [1, 3, 7, 9,
@@ -45,6 +47,17 @@ def analyze_pesel(pesel):
         "birth_date": birth_date
     }
     return result
+
+
+@pytest.mark.parametrize('pesel, expected',
+                         [
+                             ('98050276973', True),
+                             ('79022635965', True),
+                             ('98051276973', False)
+                         ])
+def test_is_valid(pesel, expected):
+    result = analyze_pesel(pesel)
+    assert result['valid'] == expected
 
 
 def test_if_pesel_field_ok():
