@@ -15,4 +15,5 @@ urlpatterns = [
     path('book/add/', AddBookView.as_view(), name='book-add'),
     path('book/', BookListView.as_view(), name='book-list'),
     path('book/<int:pk>/', BookDetailsView.as_view(), name='book-details'),
+    path('comment/<int:pk>/', EditCommentView.as_view(), name='comment-details'),
 ]

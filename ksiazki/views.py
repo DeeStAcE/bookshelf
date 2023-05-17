@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import UserPassesTestMixin, PermissionRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
@@ -148,6 +149,9 @@ class AddBookView(View):
         return render(request, 'book_add.html', {'form': form})
 
 
+# class BookListView(PermissionRequiredMixin, View):
+#     permission_required = ['ksiazki.view_book']
+# dodawanie przykładowego dostępu do strony
 class BookListView(View):
 
     def get(self, request):
@@ -165,6 +169,8 @@ class BookDetailsView(View):
                        'form': form})
 
     def post(self, request, pk):
+        if not request.user.is_authenticated:
+            return redirect('main')
         book = Book.objects.get(pk=pk)
         form = AddCommentForm(request.POST)
         if form.is_valid():
@@ -176,3 +182,17 @@ class BookDetailsView(View):
         return render(request, 'book_details.html',
                       {'book': book,
                        'form': form})
+
+
+class EditCommentView(UserPassesTestMixin, View):
+
+    def test_func(self):
+        comment = Comment.objects.get(pk=self.kwargs['pk'])
+        return comment.user == self.request.user
+
+    def get(self, request, pk):
+        comment = Comment.objects.get(pk=pk)
+        # if comment.user != request.user:
+        #     return redirect('main')
+        form = AddCommentForm(instance=comment)
+        return render(request, 'form.html', {'form': form})

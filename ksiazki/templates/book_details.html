@@ -18,7 +18,9 @@
         </div>
     </div>
     <div>
-        {% include 'basic_form.html' %}
+        {% if user.is_authenticated %}
+            {% include 'basic_form.html' %}
+        {% endif %}
     </div>
     <div>
         Komentarze:
@@ -26,6 +28,9 @@
             {% for comment in book.comment_set.all %}
                 <div>
                     <li>{{ comment.date }} -<p>{{ comment.content }}</p>{{ comment.user.username }}</li>
+                    {% if comment.user == user %}
+                        <a href="{% url 'comment-details' comment.id %}">edit</a>
+                    {% endif %}
                 </div>
             {% endfor %}
         </ul>
