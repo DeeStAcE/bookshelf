@@ -4,7 +4,7 @@
         List of publishers:
         <ul>
             {% for publisher in publishers %}
-                <li><a href="{% url 'publishers-edit' publisher.id %}">{{ publisher.name }}</a></li>
+                <li><a class="link" href="{% url 'publishers-edit' publisher.id %}">{{ publisher.name }}</a></li>
             {% endfor %}
         </ul>
     </div>

@@ -4,7 +4,7 @@
         List of authors:
         <ul>
             {% for author in authors %}
-                <li><a href="{% url 'author-edit' author.id %}">{{ author.first_name }} {{ author.last_name }}</a></li>
+                <li><a class="link" href="{% url 'author-edit' author.id %}">{{ author.first_name }} {{ author.last_name }}</a></li>
             {% endfor %}
         </ul>
     </div>

@@ -5,19 +5,28 @@
 }
 
 body {
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: #333;
     font-family: Arial, sans-serif;
     font-size: 25px;
 }
 
-a {
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.light-theme {
+    background-color: #fff;
+    color: #333;
+}
+
+.link {
     color: var(--color-link);
     text-decoration: none; /* Brak podkreślenia */
     transition: color 0.3s ease; /* Płynna animacja zmiany koloru */
 }
 
-a:hover {
+.link:hover {
     color: #23527c; /* Kolor tekstu po najechaniu kursorem */
 }
 
