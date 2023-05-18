@@ -40,7 +40,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=64)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
-    categories = models.ManyToManyField(Category)
+    categories = models.ManyToManyField(Category, blank=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     year = models.IntegerField()
 

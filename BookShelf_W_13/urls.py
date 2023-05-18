@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include('ksiazki.urls')),
     path('books_generics/', include('bookshelf_generic.urls')),
-    path('account/', include('account.urls')),
+    path('accounts/', include('account.urls')),
     path('', books.MainView.as_view(), name='main'),
 ]

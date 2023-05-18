@@ -51,7 +51,8 @@ class PublishersEditView(View):
         return redirect('publishers-list')
 
 
-class CategoryListView(View):
+class CategoryListView(PermissionRequiredMixin, View):
+    permission_required = ['ksiazki.view_category']
 
     def get(self, request):
         categories = Category.objects.order_by('name')
@@ -152,7 +153,8 @@ class AddBookView(View):
 # class BookListView(PermissionRequiredMixin, View):
 #     permission_required = ['ksiazki.view_book']
 # dodawanie przykładowego dostępu do strony
-class BookListView(View):
+class BookListView(PermissionRequiredMixin, View):
+    permission_required = ['ksiazki.view_book']
 
     def get(self, request):
         return render(request, 'book_list.html',

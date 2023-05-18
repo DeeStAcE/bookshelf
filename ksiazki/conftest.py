@@ -1,6 +1,7 @@
 from datetime import datetime
 
 import pytest
+from django.contrib.auth.models import User, Permission
 
 from ksiazki.models import Publisher, Category, Author, Book
 
@@ -42,3 +43,25 @@ def book_fixture(publishers_fixture, categories_fixture, author_fixture):
     )
     book.categories.set(categories_fixture)
     return book
+
+
+@pytest.fixture()
+def user_fixture():
+    user = User.objects.create(username='dawid')
+    return user
+
+
+@pytest.fixture()
+def user_with_view_book_perm_fixture():
+    user = User.objects.create(username='dawid')
+    perm = Permission.objects.get(codename='view_book')
+    user.user_permissions.add(perm)
+    return user
+
+
+@pytest.fixture()
+def user_with_view_category_perm_fixture():
+    user = User.objects.create(username='dawid')
+    perm = Permission.objects.get(codename='view_category')
+    user.user_permissions.add(perm)
+    return user
